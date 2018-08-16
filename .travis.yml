@@ -32,7 +32,7 @@ install:
 - conda config --set always_yes yes --set changeps1 no
 - conda create -n buildit python=$TRAVIS_PYTHON_VERSION
 - source activate buildit
-- conda install -q conda-build anaconda-client coverage sphinx pytest
+- conda install -q conda-build anaconda-client coverage sphinx pytest numpy
 script:
 - conda build ./recipe -c landlab -c csdms-stack -c conda-forge --old-build-string
 after_success:
