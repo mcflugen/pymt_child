@@ -65,7 +65,7 @@ ext_modules = [
 packages = find_packages(include=["pymt_child"])
 pymt_components = [
     (
-        "Child=pymt_child:Child",
+        "Child=pymt_child._child:Child",
         "meta",
     )
 ]
