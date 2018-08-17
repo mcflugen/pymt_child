@@ -34,7 +34,7 @@ test:
   imports:
     - pymt_child
   commands:
-    - bmi-test pymt_child:Child --infile=$(mmd-stage Child .)
+    - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .)
 
 about:
   summary: PyMT plugin for child.
