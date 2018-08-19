@@ -36,7 +36,7 @@ test:
   commands:
     - mmd-stage Child .
     - cat child.in
-    - child
+    - child child.in
     - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .)
 
 about:
