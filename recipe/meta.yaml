@@ -37,7 +37,7 @@ test:
     - mmd-stage Child .
     - cat child.in
     - child child.in
-    - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .)
+    - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .) -vvv
 
 about:
   summary: PyMT plugin for child.
