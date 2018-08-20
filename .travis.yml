@@ -36,7 +36,7 @@ install:
 - conda install -q conda-build anaconda-client coverage sphinx pytest numpy
 script:
 - conda build ./recipe -c conda-forge -c csdms-stack --old-build-string
-- conda install pymt child bmi-tester -c conda-forge -c csdms-stack
+- conda install child bmi-tester -c conda-forge -c csdms-stack
 - python setup.py install
 - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .) -vvv
 after_success:
