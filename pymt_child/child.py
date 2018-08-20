@@ -7,4 +7,4 @@ from ._child import Child
 
 # Child = bmi_factory(Child)
 
-del bmi_factory
+# del bmi_factory
