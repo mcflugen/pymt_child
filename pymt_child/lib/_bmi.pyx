@@ -6,13 +6,13 @@ from libc.stdlib cimport malloc, free
 cimport numpy as np
 import numpy as np
 
-cimport _child
+cimport _bmi
 
 
 
-
+        
 cdef class Child:
-    cdef _child.Model _bmi
+    cdef _bmi.Model _bmi
     cdef char[2048] STR_BUFFER
 
     def __cinit__(self):
@@ -78,7 +78,7 @@ cdef class Child:
             self._bmi.GetInputVarNames(names)
 
             for i in range(count):
-                py_names.append(names[i])
+                py_names.append((names[i]))
         except Exception:
             raise
         finally:
@@ -168,5 +168,5 @@ cdef class Child:
     cpdef get_grid_nodes_per_face(self, gid, np.ndarray[int, ndim=1] buff):
         self._bmi.GetGridNodesPerFace(gid, &buff[0])
         return buff
-
+    
 

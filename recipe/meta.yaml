@@ -1,43 +1,46 @@
-{% set name = "pymt_child" %}
 {% set data = load_setup_py_data() %}
-{% set build = "0" %}
 
 package:
-  name: {{ name }}
+  name: "pymt_child"
   version: {{ data.get('version') }}
 
 source:
   path: ..
 
 build:
-  number: {{ build }}
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - python
-    - setuptools
-    - numpy 1.11.*
+    - pip
     - cython
+    - numpy 1.11.*
     - model_metadata
-    - child
+    - child 
 
   run:
     - python
-    - setuptools
-    # - pymt
-    - child
+    - {{ pin_compatible('numpy') }}
+    - pymt
+    - child 
 
 test:
   requires:
     - bmi-tester
+    - model_metadata
   imports:
+    - pymt
     - pymt_child
-  # commands:
-  #   - bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .) -vvv
+  commands:
+    - config_file=$(mmd-stage Child . > MANIFEST && mmd-query Child --var=run.config_file.path)
+    - bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v
 
 about:
-  summary: PyMT plugin for child.
+  summary: Python package that wraps the child BMI.
   home: https://github.com/mcflugen/pymt_child
   license: MIT license
   license_file: LICENSE

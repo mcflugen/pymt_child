@@ -1,0 +1,22 @@
+build:
+  define_macros: []
+  extra_compile_args:
+  - -std=c++11
+  include_dirs: []
+  libraries:
+  - child
+  library_dirs: []
+  undef_macros: []
+info:
+  github_username: mcflugen
+  plugin_author: Eric Hutton
+  plugin_license: MIT
+  summary: PyMT plugin for child
+library:
+  entry_point: Child=child:Child
+  language: c++
+  register: ''
+plugin:
+  name: child
+  requirements:
+  - child

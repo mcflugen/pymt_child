@@ -1,19 +1,24 @@
 #! /usr/bin/env python
-import os, sys
+import os
+import sys
 
-from setuptools import setup, find_packages
-
-# from Cython.Build import cythonize
-from distutils.extension import Extension
+import numpy as np
 import versioneer
+from setuptools import find_packages, setup
+
+from distutils.extension import Extension
 
 try:
     import model_metadata
 except ImportError:
+
     def get_cmdclass(*args, **kwds):
         return kwds.get("cmdclass", None)
+
     def get_entry_points(*args):
         return None
+
+
 else:
     from model_metadata.utils import get_cmdclass, get_entry_points
 
@@ -21,37 +26,27 @@ else:
 import numpy as np
 
 
-include_dirs = [
-    np.get_include(),
-    os.path.join(sys.prefix, "include"),
-]
+include_dirs = [np.get_include(), os.path.join(sys.prefix, "include")]
 
 
-libraries = [
-    "child",
-]
+libraries = ["child"]
 
 
-library_dirs = [
-]
+library_dirs = []
 
 
-define_macros = [
-]
+define_macros = []
 
-undef_macros = [
-]
+undef_macros = []
 
 
-extra_compile_args = [
-    "-std=c++11",
-]
+extra_compile_args = ["-std=c++11"]
 
 
 ext_modules = [
     Extension(
-        "pymt_child._child",
-        ["pymt_child/_child.pyx"],
+        "pymt_child.lib._bmi",
+        ["pymt_child/lib/_bmi.pyx"],
         language="c++",
         include_dirs=include_dirs,
         libraries=libraries,
@@ -62,13 +57,8 @@ ext_modules = [
     )
 ]
 
-packages = find_packages(include=["pymt_child"])
-pymt_components = [
-    (
-        "Child=pymt_child._child:Child",
-        "meta",
-    )
-]
+packages = find_packages()
+pymt_components = [("Child=pymt_child.lib:Child", "meta/Child")]
 
 setup(
     name="pymt_child",

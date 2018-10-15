@@ -1,7 +1,7 @@
 
 
 
-cdef extern from "child/ChildInterface/bmi_model.h" namespace "bmi":
+cdef extern from "bmi.hxx" namespace "bmi":
     cdef cppclass Model:
         Model() except +
         void GetComponentName(char * name) except +

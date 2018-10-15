@@ -2,12 +2,11 @@ language: generic
 os:
 - osx
 - linux
-osx_image: xcode6.4
 env:
   matrix:
   - TRAVIS_PYTHON_VERSION="2.7"
-  - TRAVIS_PYTHON_VERSION="3.5"
   - TRAVIS_PYTHON_VERSION="3.6"
+  - TRAVIS_PYTHON_VERSION="3.7"
   global:
   - CONDA_PREFIX=$HOME/miniconda
   - MINICONDA_URL_BASE="https://repo.continuum.io/miniconda/Miniconda3-latest"
@@ -31,16 +30,16 @@ install:
 - export PATH="$CONDA_PREFIX/bin:$PATH"
 - hash -r
 - conda config --set always_yes yes --set changeps1 no
-- conda create -n buildit python=$TRAVIS_PYTHON_VERSION
-- source activate buildit
-- conda install -q conda-build anaconda-client coverage sphinx pytest numpy
+- conda config --add channels conda-forge
+- conda create -n _testing python=$TRAVIS_PYTHON_VERSION
+- source activate _testing
+- conda install -q conda-build anaconda-client
+- conda install -q --file=requirements.txt
+- conda install -q bmi-tester model_metadata
 script:
-- conda build ./recipe -c conda-forge -c csdms-stack --old-build-string
-- conda install child model_metadata bmi-tester -c conda-forge -c csdms-stack
-- python setup.py install
-- bmi-test pymt_child._child:Child --infile=$(mmd-stage Child .) -vvv
-after_success:
-- curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
-  > $HOME/anaconda_upload.py
-- echo $ANACONDA_TOKEN | python $HOME/anaconda_upload.py ./recipe --channel=main --org=csdms-stack --old-build-string
-  --token=-
+- python setup.py develop
+- python -c 'import pymt_child'
+- python -c 'import pymt'
+- |
+  config_file=$(mmd-stage Child . > MANIFEST && mmd-query Child --var=run.config_file.path)
+  bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v
