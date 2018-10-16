@@ -38,11 +38,4 @@ install:
 - conda install -q bmi-tester model_metadata
 script:
 - python setup.py develop
-- python -c 'import pymt_child'
 - python -c 'import pymt'
-- config_file=$(mmd-query Child --var=run.config_file.path)
-- echo "model config file is $config_file"
-- mmd-stage Child . > MANIFEST
-- cat MANIFEST
-- ls
-- bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v --basetemp=./_temp
