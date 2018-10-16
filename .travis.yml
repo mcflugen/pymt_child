@@ -45,4 +45,4 @@ script:
 - mmd-stage Child . > MANIFEST
 - cat MANIFEST
 - ls
-- bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v
+- bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v --basetemp=./_temp
