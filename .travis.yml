@@ -38,4 +38,4 @@ install:
 - conda install -q bmi-tester model_metadata
 script:
 - python setup.py develop
-- python -c 'import pymt'
+- python -c 'import pymt_child'
