@@ -25,7 +25,6 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - pymt
     - child 
 
 test:
@@ -33,7 +32,6 @@ test:
     - bmi-tester
     - model_metadata
   imports:
-    - pymt
     - pymt_child
   commands:
     - config_file=$(mmd-stage Child . > MANIFEST && mmd-query Child --var=run.config_file.path)
