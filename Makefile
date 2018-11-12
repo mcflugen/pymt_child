@@ -58,8 +58,7 @@ pretty:
 	black setup.py pymt_child
 
 test: ## run tests quickly with the default Python
-	config_file=$(mmd-stage Child . > MANIFEST && mmd-query Child --var=run.config_file.path)
-	bmi-test pymt_child.bmi:Child --infile=$config_file --manifest=MANIFEST -v
+	bmi-test pymt_child.bmi:Child -vvv
 
 test-all: ## run tests on every Python version with tox
 	tox

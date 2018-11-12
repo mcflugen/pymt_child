@@ -1,3 +1,6 @@
 #! /usr/bin/env python
 
-from ._bmi import Child
+
+from .child import Child
+
+__all__ = ["Child"]

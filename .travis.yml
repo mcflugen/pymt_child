@@ -39,3 +39,4 @@ install:
 script:
 - python setup.py develop
 - python -c 'import pymt_child'
+- bmi-test pymt_child.bmi:Child -vvv

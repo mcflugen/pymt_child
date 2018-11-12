@@ -29,6 +29,13 @@ PyMT plugin for child
 * Documentation: https://child.readthedocs.io.
 
 
+
+========= =======================================
+Component PyMT
+========= =======================================
+Child     `from pymt.components import Child`
+========= =======================================
+
 ---------------
 Installing pymt
 ---------------

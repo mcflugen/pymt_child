@@ -3,8 +3,7 @@ build:
   extra_compile_args:
   - -std=c++11
   include_dirs: []
-  libraries:
-  - child
+  libraries: []
   library_dirs: []
   undef_macros: []
 info:
