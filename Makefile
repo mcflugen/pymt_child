@@ -53,7 +53,7 @@ clean-test: ## remove test and coverage artifacts
 lint: ## check style with flake8
 	flake8 pymt_child
 
-pretty:
+pretty: ## reformat files to make them look pretty
 	find pymt_child -name '*.py' | xargs isort
 	black setup.py pymt_child
 

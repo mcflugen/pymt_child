@@ -12,9 +12,8 @@ info:
   plugin_license: MIT
   summary: PyMT plugin for child
 library:
-  entry_point: Child=child:Child
+  entry_point: Child=child:Model@child/ChildInterface/bmi_model.h
   language: c++
-  register: ''
 plugin:
   name: child
   requirements:

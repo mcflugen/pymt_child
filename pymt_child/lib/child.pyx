@@ -7,7 +7,7 @@ cimport numpy as np
 import numpy as np
 
 
-cdef extern from "bmi.hxx" namespace "bmi":
+cdef extern from "child/ChildInterface/bmi_model.h":
     cdef cppclass Model:
         Model() except +
         void GetComponentName(char * name) except +
@@ -51,7 +51,6 @@ cdef extern from "bmi.hxx" namespace "bmi":
         void GetGridFaceEdges(const int, int * const) except +
         void GetGridFaceNodes(const int, int * const) except +
         void GetGridNodesPerFace(const int, int * const) except +
-    
 
 # start: child.pyx
 
