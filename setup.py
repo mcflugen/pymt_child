@@ -25,7 +25,7 @@ ext_modules = [
         "pymt_child.lib.child",
         ["pymt_child/lib/child.pyx"],
         libraries=libraries + ["child"],
-        **common_flags,
+        **common_flags
     )
 ]
 
