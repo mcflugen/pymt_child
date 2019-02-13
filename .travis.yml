@@ -5,7 +5,6 @@ os:
 osx_image: xcode6.4
 env:
   matrix:
-  - TRAVIS_PYTHON_VERSION="2.7"
   - TRAVIS_PYTHON_VERSION="3.6"
   - TRAVIS_PYTHON_VERSION="3.7"
   global:
