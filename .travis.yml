@@ -29,6 +29,9 @@ install:
 - conda env create -n test_env --file ci/requirements-$CONDA_ENV.yml
 - source activate test_env
 - python setup.py develop
+- conda info && conda list
 script:
+- which python
+- python --version
 - python -c 'import pymt_child'
 - bmi-test pymt_child.bmi:Child -vvv
