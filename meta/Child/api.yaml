@@ -1,4 +1,4 @@
-name: child
+name: pymt_child
 language: c++
-package: child
+package: pymt_child
 class: Child

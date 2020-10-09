@@ -4,7 +4,7 @@ pymt_child
 
 
 .. image:: https://img.shields.io/badge/CSDMS-Basic%20Model%20Interface-green.svg
-        :target: https://bmi-forum.readthedocs.io/
+        :target: https://bmi.readthedocs.io/
         :alt: Basic Model Interface
 
 .. image:: https://img.shields.io/badge/recipe-pymt_child-green.svg
@@ -13,8 +13,8 @@ pymt_child
 .. image:: https://img.shields.io/travis/mcflugen/pymt_child.svg
         :target: https://travis-ci.org/mcflugen/pymt_child
 
-.. image:: https://readthedocs.org/projects/pymt_child/badge/?version=latest
-        :target: https://pymt_child.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pymt-child/badge/?version=latest
+        :target: https://pymt-child.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
@@ -25,16 +25,18 @@ pymt_child
 PyMT plugin for child
 
 
-* Free software: MIT license
-* Documentation: https://child.readthedocs.io.
+* Free software: MIT License
+* Documentation: https://pymt-child.readthedocs.io.
 
 
 
-========= =======================================
+
+========= ===================================
 Component PyMT
-========= =======================================
-Child     `from pymt.components import Child`
-========= =======================================
+========= ===================================
+
+Child     `from pymt.models import Child`
+========= ===================================
 
 ---------------
 Installing pymt
@@ -52,7 +54,7 @@ into which to install it. This can be done with,
 
 .. code::
 
-  conda create -n pymt python=3.6
+  conda create -n pymt python=3
   conda activate pymt
 
 Once the `conda-forge` channel has been enabled, `pymt` can be installed with:
