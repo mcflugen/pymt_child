@@ -14,7 +14,7 @@ common_flags = {
     "define_macros": [],
     "undef_macros": [],
     "extra_compile_args": [
-        "-std=c++11",
+        # "-std=c++11",
     ],
     "language": "c++",
 }
