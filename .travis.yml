@@ -43,5 +43,5 @@ install:
 - pip install -e .
 script:
 - conda install -q --file=requirements-testing.txt
-- python -c 'import numpy; import pymt_child'
+- python -c 'import pymt_child'
 - bmi-test pymt_child.bmi:Child -vvv
