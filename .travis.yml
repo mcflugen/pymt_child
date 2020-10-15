@@ -4,7 +4,6 @@ os:
 - linux
 env:
   matrix:
-  - PYTHON="3.6"
   - PYTHON="3.7"
   - PYTHON="3.8"
   global:
@@ -42,5 +41,5 @@ install:
 - pip install -e .
 script:
 - conda install -q --file=requirements-testing.txt
-- python -c 'import pymt_child'
+- python -c 'import numpy; import pymt_child'
 - bmi-test pymt_child.bmi:Child -vvv
