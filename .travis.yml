@@ -4,10 +4,8 @@ os:
 - linux
 env:
   matrix:
-  - PYTHON="3.6"
   - PYTHON="3.7"
   - PYTHON="3.8"
-  - PYTHON="3.9"
   global:
   - CONDA_PREFIX=$HOME/miniconda
 sudo: false
