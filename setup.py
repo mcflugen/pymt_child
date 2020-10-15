@@ -4,17 +4,19 @@ import sys
 
 import numpy as np
 from setuptools import Extension, find_packages, setup
+from Cython.Build import cythonize
+
 
 common_flags = {
     "include_dirs": [
         np.get_include(),
-        os.path.join(sys.prefix, "include"),
+    #     os.path.join(sys.prefix, "include"),
     ],
     "library_dirs": [],
     "define_macros": [],
     "undef_macros": [],
     "extra_compile_args": [
-        # "-std=c++11",
+        "-std=c++11",
     ],
     "language": "c++",
 }
@@ -26,7 +28,7 @@ if sys.platform.startswith("win"):
     common_flags["include_dirs"].append(os.path.join(sys.prefix, "Library", "include"))
     common_flags["library_dirs"].append(os.path.join(sys.prefix, "Library", "lib"))
 
-ext_modules = [
+ext_modules = cythonize([
     Extension(
         "pymt_child.lib.child",
         ["pymt_child/lib/child.pyx"],
@@ -34,6 +36,7 @@ ext_modules = [
         **common_flags
     ),
 ]
+)
 
 entry_points = {
     "pymt.plugins": [
