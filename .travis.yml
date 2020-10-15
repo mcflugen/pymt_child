@@ -37,8 +37,9 @@ before_install:
 - source activate _testing
 - conda info -a && conda list
 install:
-- pip install cython numpy setuptools wheel
+- conda install -q --file=requirements-build.txt
 - conda install -q --file=requirements-library.txt
+- pip install cython numpy setuptools wheel
 - pip install -e .
 script:
 - conda install -q --file=requirements-testing.txt
