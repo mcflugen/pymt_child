@@ -1,0 +1,26 @@
+[library]
+[library.Child]
+library = "child"
+header = "child/ChildInterface/bmi_child.hxx"
+entry_point = "Model"
+language = "c++"
+
+[build]
+undef_macros = []
+define_macros = []
+libraries = []
+library_dirs = []
+include_dirs = []
+extra_compile_args = ["-std=c++11"]
+
+[package]
+name = "pymt_child"
+requirements = ["child"]
+
+[info]
+package_author = "Eric Hutton"
+package_author_email = "eric.hutton@gmail.com"
+github_username = "mcflugen"
+package_license = "MIT"
+summary = "PyMT plugin for child"
+

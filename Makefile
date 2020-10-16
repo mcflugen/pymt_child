@@ -53,7 +53,7 @@ clean-test: ## remove test and coverage artifacts
 lint: ## check style with flake8
 	flake8 pymt_child
 
-pretty: ## reformat files to make them look pretty
+pretty:
 	find pymt_child -name '*.py' | xargs isort
 	black setup.py pymt_child
 
@@ -64,7 +64,7 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source child -m pytest
+	coverage run --source pymt_child -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
@@ -89,4 +89,4 @@ dist: clean ## builds source and wheel package
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
-	python setup.py develop
+	pip install -e .
