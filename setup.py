@@ -49,7 +49,7 @@ setup(
     author_email="eric.hutton@gmail.com",
     description="PyMT plugin for pymt_child",
     long_description=long_description,
-    version="0.1.4.dev0",
+    version="0.2.0",
     url="https://github.com/mcflugen/pymt_child",
     classifiers=[
         "Development Status :: 4 - Beta",
