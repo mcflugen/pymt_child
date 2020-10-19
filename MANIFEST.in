@@ -5,10 +5,11 @@ include *.rst
 include *.txt
 include Makefile
 include babel.toml
+recursive-include pymt_child *.pyx
 recursive-include docs *.py
 recursive-include docs *.rst
 recursive-include docs Makefile
 recursive-exclude meta *
-recursive-include pymt_child *.pyx
 recursive-exclude recipe *
 recursive-exclude pymt_child *.cpp
+recursive-exclude pymt_child *.c
