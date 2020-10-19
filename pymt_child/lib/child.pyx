@@ -195,3 +195,7 @@ cdef class Child:
         self._bmi.GetGridNodesPerFace(gid, &buff[0])
         return buff
 
+    cpdef get_grid_edge_nodes(self, gid, np.ndarray[int, ndim=1] buff):
+        self._bmi.GetGridEdgeNodes(gid, &buff[0])
+        return buff
+

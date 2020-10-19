@@ -1,10 +1,10 @@
 Changelog for pymt_child
 ========================
 
-0.1.4 (unreleased)
+0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added get_grid_edge_nodes method (#2)
 
 
 0.1.3 (2020-10-15)
