@@ -1,6 +1,6 @@
 [library]
 [library.Child]
-library = "child"
+library = "child>=20.10.29"
 header = "child/ChildInterface/bmi_child.hxx"
 entry_point = "Model"
 language = "c++"
