@@ -20,11 +20,11 @@ requirements:
     - cython
     - numpy 1.11.*
     - model_metadata
-    - child 
+    - child>=20.10.29 
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - child 
+    - child>=20.10.29 
 
 test:
   requires:
