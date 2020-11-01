@@ -6,11 +6,16 @@ import numpy as np
 from setuptools import Extension, find_packages, setup
 
 common_flags = {
-    "include_dirs": [np.get_include(), os.path.join(sys.prefix, "include"),],
+    "include_dirs": [
+        np.get_include(),
+        os.path.join(sys.prefix, "include"),
+    ],
     "library_dirs": [],
     "define_macros": [],
     "undef_macros": [],
-    "extra_compile_args": ["-std=c++11",],
+    "extra_compile_args": [
+        "-std=c++11",
+    ],
     "language": "c++",
 }
 
@@ -30,7 +35,11 @@ ext_modules = [
     ),
 ]
 
-entry_points = {"pymt.plugins": ["Child=pymt_child.bmi:Child",]}
+entry_points = {
+    "pymt.plugins": [
+        "Child=pymt_child.bmi:Child",
+    ]
+}
 
 
 def read(filename):

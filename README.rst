@@ -78,7 +78,7 @@ be installed with:
 
 .. code::
 
-  conda install child
+  conda install child>=20.10.29
 
 To install `pymt_child`,
 
