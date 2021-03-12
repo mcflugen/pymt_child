@@ -10,16 +10,18 @@ pymt_child
 .. image:: https://img.shields.io/badge/recipe-pymt_child-green.svg
         :target: https://anaconda.org/conda-forge/pymt_child
 
-.. image:: https://img.shields.io/travis/mcflugen/pymt_child.svg
-        :target: https://travis-ci.org/mcflugen/pymt_child
-
 .. image:: https://readthedocs.org/projects/pymt-child/badge/?version=latest
         :target: https://pymt-child.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-        :target: https://github.com/csdms/pymt
-        :alt: Code style: black
+.. image:: https://github.com/mcflugen/pymt_child/actions/workflows/test.yml/badge.svg
+        :target: https://github.com/mcflugen/pymt_child/actions/workflows/test.yml
+
+.. image:: https://github.com/mcflugen/pymt_child/actions/workflows/flake8.yml/badge.svg
+        :target: https://github.com/mcflugen/pymt_child/actions/workflows/flake8.yml
+
+.. image:: https://github.com/mcflugen/pymt_child/actions/workflows/black.yml/badge.svg
+        :target: https://github.com/mcflugen/pymt_child/actions/workflows/black.yml
 
 
 PyMT plugin for child
