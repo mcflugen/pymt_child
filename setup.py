@@ -25,6 +25,8 @@ libraries = []
 if sys.platform.startswith("win"):
     common_flags["include_dirs"].append(os.path.join(sys.prefix, "Library", "include"))
     common_flags["library_dirs"].append(os.path.join(sys.prefix, "Library", "lib"))
+    common_flags["library_dirs"].append(os.path.join(sys.prefix, "lib"))
+
 
 ext_modules = [
     Extension(
@@ -43,7 +45,7 @@ entry_points = {
 
 
 def read(filename):
-    with open(filename, "r", encoding="utf-8") as fp:
+    with open(filename, "r") as fp:
         return fp.read()
 
 
@@ -71,7 +73,6 @@ setup(
     ],
     keywords=["bmi", "pymt"],
     install_requires=open("requirements.txt", "r").read().splitlines(),
-    setup_requires=["cython"],
     ext_modules=ext_modules,
     packages=find_packages(),
     entry_points=entry_points,
