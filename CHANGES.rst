@@ -1,8 +1,8 @@
 Changelog for pymt_child
 ========================
 
-0.2.1 (unreleased)
--------------------
+0.2.1 (2021-03-13)
+------------------
 
 - Rerendered with babelizer v0.3.7.dev0 (#5)
 
